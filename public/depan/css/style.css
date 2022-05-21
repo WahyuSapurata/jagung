@@ -1,0 +1,941 @@
+/*
+  Theme Name: BizPage
+  Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+  Author: BootstrapMade.com
+  License: https://bootstrapmade.com/license/
+*/
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(239, 255, 555);
+  color: #666666;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar {
+  background: #78b785;
+  padding: 0;
+}
+
+@media (max-width: 986px) {
+  .hiden {
+    display: none;
+  }
+}
+
+.image-bar {
+  margin-right: 30px;
+}
+
+@media (max-width: 986px) {
+  .image-bar {
+    width: 65px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 986px) {
+  .col-md-2 {
+    width: fit-content;
+  }
+}
+
+.bottom {
+  background: #78b785;
+}
+
+.form {
+  width: 100%;
+  margin-right: 20px;
+}
+
+/* section */
+
+.s-jumbotron {
+  position: relative;
+}
+
+.section {
+  position: relative;
+}
+
+.fa-solid {
+  font-size: 23px;
+}
+
+.slick-home {
+  width: 100%;
+  height: 50vh;
+  border-radius: 5px;
+}
+
+.left {
+  position: absolute;
+  top: 45%;
+  left: 5px;
+  height: 40px;
+  width: 40px;
+  background: transparent;
+  /* color: #fff; */
+  border-radius: 10px;
+  z-index: 99;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.fa-chevron-left {
+  font-size: 24px;
+  margin-left: 10px;
+  line-height: 1.5;
+  opacity: 2.4;
+}
+
+.left:hover {
+  background: rgb(110, 115, 116);
+  border-color: rgb(110, 115, 116);
+}
+.right {
+  position: absolute;
+  top: 45%;
+  right: 5px;
+  height: 40px;
+  width: 40px;
+  background: transparent;
+  /* color: #fff; */
+  border-radius: 10px;
+  z-index: 99;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.fa-chevron-right {
+  font-size: 24px;
+  line-height: 1.5;
+  opacity: 2.4;
+  margin-left: 10px;
+}
+
+.right:hover {
+  background: rgb(110, 115, 116);
+  border-color: rgb(110, 115, 116);
+}
+
+.img-beranda {
+  width: 355px;
+  border-radius: 3px;
+  height: 144px;
+}
+
+.card-img-top {
+  height: 140px;
+  width: 140px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.card-body {
+  padding: 0 7px 7px 7px;
+}
+
+.card-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-ikon {
+  border-color: #78b785;
+  width: auto;
+}
+
+@media (max-width: 986px) {
+  .card-ikon {
+    text-align: center;
+  }
+}
+
+.row-main {
+  gap: 16px;
+}
+
+.gambar_2 {
+  display: grid;
+  gap: 10px;
+}
+
+@media (max-width: 986px) {
+  .gambar_2 {
+    display: none;
+  }
+}
+
+/* kategori */
+
+.kategori {
+  padding: 30px 0;
+}
+
+.row-kategori {
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.header-kategori {
+  color: #78b785;
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.body-kategori {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 15px 0;
+  gap: 16px;
+}
+
+@media (max-width: 986px) {
+  .body-kategori {
+    justify-content: center;
+  }
+}
+
+.body-kategori a {
+  text-decoration: none;
+  color: #666666;
+}
+
+.card-ikon-kategori {
+  border-color: 1px solid rgba(0, 0, 0, 0.05);
+  width: min-content;
+}
+
+.body-kategori .card-ikon-kategori:hover {
+  border: 2px solid #78b785;
+  color: #78b785;
+}
+
+@media (max-width: 986px) {
+  .card-ikon-kategori {
+    text-align: center;
+  }
+}
+
+.title {
+  font-weight: bold;
+}
+
+/* kategori */
+
+/* produk */
+
+.produk {
+  padding: 30px 0;
+}
+
+.row-produk {
+  background-color: #fff;
+  border-radius: 3px;
+  border-bottom: 2px solid #78b785;
+}
+
+.header-produk {
+  color: #78b785;
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.detail-harga {
+  padding: 0.3125rem 0 0;
+  display: flex;
+  height: 1.5rem;
+  align-items: center;
+  overflow: hidden;
+}
+
+.harga {
+  flex: 1 0 auto;
+  font-size: 13px;
+  color: #78b785;
+}
+
+.terjual {
+  font-size: 9px;
+}
+
+/* produk */
+
+/* end section */
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  background: #18d26e;
+  color: #fff;
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 50%;
+  right: 15px;
+  bottom: 15px;
+  transition: background 0.5s;
+  z-index: 11;
+}
+
+.back-to-top i {
+  padding-top: 12px;
+  color: #fff;
+}
+
+@media (max-width: 986px) {
+  .back-to-top {
+    margin-bottom: 80px;
+  }
+}
+
+/* keranjang */
+
+#main {
+  padding: 30px 0;
+}
+
+#main .kerangjang-belanja {
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+#main .kerangjang-belanja a {
+  color: black;
+  text-decoration: none;
+}
+
+#main .kerangjang-belanja a:hover {
+  color: #78b785;
+}
+
+#main .kerangjang-belanja:hover {
+  border: 2px solid #78b785;
+  color: #78b785;
+}
+
+.item-kerangjang {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+}
+
+.card-img {
+  height: 140px;
+  width: 140px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.item-gambar {
+  display: flex;
+}
+
+.qwerty {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.harga-keranjang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hapus-keranjang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 150px;
+}
+
+#main .hapus-keranjang a {
+  color: black;
+  text-decoration: none;
+}
+
+#main .hapus-keranjang a:hover {
+  color: #78b785;
+}
+
+@media (max-width: 986px) {
+  .hapus-keranjang {
+    margin-left: 50px;
+  }
+
+  .item-kerangjang {
+    display: block;
+  }
+
+  .harga-keranjang {
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+}
+
+/* keranjang */
+
+/* user */
+
+.user-sidebar {
+  display: block;
+  width: 180px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 986px) {
+  .user-sidebar {
+    width: auto;
+  }
+}
+
+.user-item {
+  list-style: none;
+  cursor: pointer;
+}
+
+.item1 {
+  margin-bottom: 15px;
+}
+
+.item1 a {
+  text-decoration: none;
+  color: black;
+}
+
+.item1 a:hover {
+  color: #78b785;
+}
+
+.item2 a {
+  text-decoration: none;
+  color: black;
+}
+
+.item2 a:hover {
+  color: #78b785;
+}
+
+.active {
+  color: #78b785;
+}
+
+.user-content {
+  position: relative;
+  flex-grow: 1;
+  box-sizing: border-box;
+  margin-left: 1rem;
+  min-width: 0;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 13%);
+  border-radius: 0.125rem;
+}
+
+@media (max-width: 986px) {
+  .user {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 986px) {
+  .user-text1,
+  .user-text2 {
+    display: none;
+  }
+}
+
+@media (max-width: 986px) {
+  .user-content table {
+    font-size: 13px;
+  }
+}
+
+.user-body {
+  padding: 10px;
+}
+
+/* user */
+
+/* belanja */
+
+.section-belanja {
+  margin-top: 30px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.belanja {
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.img-fluid {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+}
+
+.header-belanja {
+  display: flex;
+  margin-top: 0.625rem;
+}
+
+h3 {
+  color: #212529;
+}
+
+.text-belanja1 {
+  padding-right: 10px;
+  border-right: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.text-belanja2 {
+  padding-left: 10px;
+}
+
+.harga-belanja {
+  display: flex;
+}
+
+.harga1 {
+  padding: 10px;
+  display: flex;
+}
+
+.text-harga {
+  margin-right: 10px;
+  line-height: 41px;
+}
+
+.total-harga {
+  font-size: 40px;
+  color: #033e23;
+}
+
+.harga-checkout {
+  margin-left: 10px;
+  font-size: 30px;
+  color: #033e23;
+}
+.money {
+  border: none;
+  color: #033e23;
+}
+
+@media (max-width: 986px) {
+  .text-harga,
+  .total-harga {
+    line-height: normal;
+    font-size: medium;
+  }
+
+  .harga-checkout {
+    font-size: 18px;
+  }
+}
+
+.tombol {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 986px) {
+  .tombol {
+    display: grid;
+  }
+}
+
+@media (max-width: 986px) {
+  .tbl-text {
+    display: none;
+  }
+
+  .fa-cart-plus {
+    margin: 0;
+  }
+}
+
+.btn-keranjang {
+  background-color: rgb(239, 255, 555);
+  border: 1px solid #033e23;
+  color: #033e23;
+}
+
+.tbl-kerangjang button:hover {
+  background-color: rgb(239, 255, 555);
+  border: 1px solid #78b785;
+  color: #78b785;
+}
+
+.fa-cart-plus {
+  font-size: medium;
+}
+
+.btn-beli {
+  background-color: #78b785;
+  border: 1px solid #033e23;
+  color: #033e23;
+}
+
+.tbl-beli a:hover {
+  background-color: rgb(239, 255, 555);
+  border: 1px solid #78b785;
+  color: #78b785;
+}
+
+.user-body a:hover {
+  background-color: rgb(239, 255, 555);
+  border: 1px solid #78b785;
+  color: #78b785;
+}
+
+.deskripsi-belanja {
+  padding: 10px;
+}
+
+.titel-deskripsi {
+  border-bottom: 2px solid;
+}
+
+.text-deskripsi {
+  margin: 0;
+}
+
+.content-deskripsi {
+  padding: 10px;
+}
+
+/* belanja */
+
+/* checkout */
+
+.checkout {
+  padding: 15px;
+}
+
+.fa-circle-info {
+  font-size: 17px;
+  margin-right: 2px;
+}
+
+.qty-input {
+  width: 50px;
+  text-align: center;
+  border-radius: 0;
+}
+
+.input-group-text {
+  border-radius: 0;
+}
+
+.button-chek {
+  display: grid;
+  place-content: center;
+  margin-top: 30px;
+}
+
+.form-text {
+  font-size: 17px;
+  font-style: italic;
+}
+
+/* checkout */
+
+/* foother */
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+@media (max-height: 800px) {
+  footer {
+    position: static;
+  }
+  header {
+    padding-top: 40px;
+  }
+}
+
+.footer-distributed {
+  background-color: #78b785;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 50px 50px 30px 50px;
+  margin-top: 50px;
+}
+
+@media (max-width: 986px) {
+  .footer-distributed {
+    margin-top: 1px;
+  }
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+  width: 30%;
+}
+
+.footer-distributed h3 {
+  color: #ffffff;
+  font: normal 36px "Cookie", cursive;
+  margin: 0;
+}
+
+/* The company logo */
+
+.footer-distributed .footer-left img {
+  width: 30%;
+}
+
+.footer-distributed h3 .textone {
+  color: #033e23;
+}
+
+.footer-distributed h3 span {
+  color: #e0ac1c;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+  color: #ffffff;
+  margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+  color: #212529;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center {
+  width: 35%;
+}
+
+.footer-distributed .footer-center i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 46px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+  font-size: 25pxpx;
+  line-height: 46px;
+}
+
+.footer-distributed .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+  color: #212529;
+  text-decoration: none;
+}
+
+.footer-distributed .footer-center p a:hover {
+  color: #18d26e;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+  width: 30%;
+}
+
+.footer-distributed .footer-company-about {
+  line-height: 20px;
+  color: #212529;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+  display: block;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+.footer-distributed .footer-icons a:hover {
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/* Here is the code for Responsive Footer */
+/* You can remove below code if you don't want Footer to be responsive */
+
+@media (max-width: 986px) {
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i {
+    margin-left: 0;
+  }
+}
+
+/* foother */
+
+.chat-main {
+  top: 58px;
+  /* right: 196px; */
+  display: contents;
+  position: fixed;
+}
+.hide-chat-box {
+  margin-left: 187px;
+}
+.chat-header {
+  background: #e5efc1;
+  border: 1px solid #d7df71;
+  display: flex;
+}
+.image img {
+  height: 40px;
+  width: 40px;
+}
+.image {
+  display: grid;
+  place-items: center;
+}
+.user-detail h6 {
+  display: inline-block;
+}
+.user-detail .active {
+  color: #32b92d;
+  font-size: 12px;
+}
+.options i {
+  color: #a1a1a1;
+  font-size: 19px;
+  cursor: pointer;
+}
+.chat-content,
+.chat-content .sender,
+.user-detail h6 {
+  font-size: 14px;
+}
+.chat-content ul {
+  height: 337px;
+  overflow-x: scroll;
+  overflow-x: hidden;
+}
+@media (max-width: 986px) {
+  .chat-content ul {
+    height: 398px;
+  }
+}
+@media (max-width: 986px) {
+  .col-md-11 {
+    width: -webkit-fill-available;
+  }
+}
+.chat-content ul li {
+  list-style: none;
+  background: #f5f5f5;
+}
+.chat-content .msg-box {
+  background: #e1e1e1;
+}
+.chat-content .msg-box .send-btn {
+  background: #39aea9;
+}
+.chat-content .time {
+  font-size: 10px;
+  color: #a1a1a1;
+}

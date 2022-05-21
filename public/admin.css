@@ -1,0 +1,90 @@
+.card-header {
+  background-color: #95cd41;
+}
+.alert {
+  background-color: #96ceb4;
+}
+.card-header {
+  background-color: #95cd41;
+  opacity: 0.89;
+}
+.img {
+  height: 200px;
+  width: 250px;
+  border-radius: 5px;
+}
+
+.chat-main {
+  top: 58px;
+  /* right: 196px; */
+  display: contents;
+  position: fixed;
+}
+.hide-chat-box {
+  margin-left: 187px;
+}
+.chat-header {
+  background: #e5efc1;
+  border: 1px solid #d7df71;
+  display: flex;
+}
+.image img {
+  height: 40px;
+  width: 40px;
+}
+.image {
+  display: grid;
+  place-items: center;
+}
+.user-detail h6 {
+  display: inline-block;
+}
+.user-detail .active {
+  color: #32b92d;
+  font-size: 12px;
+}
+.options i {
+  color: #a1a1a1;
+  font-size: 19px;
+  cursor: pointer;
+}
+.chat-content,
+.chat-content .sender,
+.user-detail h6 {
+  font-size: 14px;
+}
+.chat-content ul {
+  height: 313px;
+  overflow-x: scroll;
+  overflow-x: hidden;
+}
+@media (max-width: 986px) {
+  .chat-content ul {
+    height: 398px;
+  }
+}
+@media (max-width: 986px) {
+  .col-md-11 {
+    width: -webkit-fill-available;
+  }
+}
+.chat-content ul li {
+  list-style: none;
+  background: #f5f5f5;
+}
+.chat-content .msg-box {
+  background: #e1e1e1;
+}
+.chat-content .msg-box .send-btn {
+  background: #39aea9;
+}
+.chat-content .time {
+  font-size: 10px;
+  color: #a1a1a1;
+}
+.fa-comment-dots {
+  font-size: 130px;
+  opacity: 0.7;
+  color: slategray;
+  margin-top: 50px;
+}
