@@ -62,6 +62,7 @@ class Home extends BaseController
         if ($this->session->has('username') == "") {
             return redirect()->to(base_url('home/blocked_admin'));
         }
+        $data['chat'] = $this->M_login->customchat();
         $data['title'] = 'Keranjang Belanja';
         $data['keranjang'] = $this->M_addcart->join_cart()->getResultArray();
         $data['jagung'] = $this->M_jagung->findAll();
@@ -80,6 +81,7 @@ class Home extends BaseController
         if ($this->session->has('username') == "") {
             return redirect()->to(base_url('home/blocked_admin'));
         }
+        $data['chat'] = $this->M_login->customchat();
         $data['title'] = 'Chat';
         $request = \Config\Services::request();
         $no =  $request->uri->getSegment(3);
@@ -126,6 +128,7 @@ class Home extends BaseController
         if ($this->session->has('username') == "") {
             return redirect()->to(base_url('home/blocked_admin'));
         }
+        $data['chat'] = $this->M_login->customchat();
         $data['title'] = 'Akun Saya';
         return view('home/akun', $data);
     }
@@ -135,6 +138,7 @@ class Home extends BaseController
         if ($this->session->has('username') == "") {
             return redirect()->to(base_url('home/blocked_admin'));
         }
+        $data['chat'] = $this->M_login->customchat();
         $data['title'] = 'Pesanan Saya';
         $data['jagung'] = $this->M_checkout->join_checkout()->getResultArray();
         // dd($data['jagung']);
@@ -143,6 +147,10 @@ class Home extends BaseController
 
     public function detail_pesanan($id_checkout)
     {
+        if ($this->session->has('username') == "") {
+            return redirect()->to(base_url('home/blocked_admin'));
+        }
+        $data['chat'] = $this->M_login->customchat();
         $data['detail'] = $this->M_checkout->join_detail($id_checkout);
         // dd($data['detail']);
         return view('home/detail-pesanan', $data);
@@ -153,6 +161,7 @@ class Home extends BaseController
         if ($this->session->has('username') == "") {
             return redirect()->to(base_url('home/blocked_admin'));
         }
+        $data['chat'] = $this->M_login->customchat();
         $data['title'] = 'Jagung';
         $data['dJagung'] = $this->M_jagung->where('id_kategori', $id_kategori)->find();
         $data['kategori'] = $this->M_kategori->where('id_kategori', $id_kategori)->find();
@@ -165,6 +174,7 @@ class Home extends BaseController
         if ($this->session->has('username') == "") {
             return redirect()->to(base_url('home/blocked_admin'));
         }
+        $data['chat'] = $this->M_login->customchat();
         $data['title'] = 'Belanja';
         $data['belanja'] = $this->M_jagung->where('id_jagung', $id_jagung)->find();
         $data['jumlah_terjual'] = $this->M_checkout->jumlah_terjual($id_jagung);
@@ -191,6 +201,7 @@ class Home extends BaseController
         if ($this->session->has('username') == "") {
             return redirect()->to(base_url('home/blocked_admin'));
         }
+        $data['chat'] = $this->M_login->customchat();
         $data['title'] = 'Checkout';
         $data['belanja'] = $this->M_jagung->where('id_jagung', $id_jagung)->first();
         $data['jumlah_terjual'] = $this->M_checkout->jumlah_terjual($id_jagung);
@@ -233,6 +244,10 @@ class Home extends BaseController
 
     public function cari()
     {
+        if ($this->session->has('username') == "") {
+            return redirect()->to(base_url('home/blocked_admin'));
+        }
+        $data['chat'] = $this->M_login->customchat();
         $cari = $this->request->getVar('cari');
         $data['cari'] = $cari;
         $data['hasil'] = $this->M_jagung->cari_jagung($cari);

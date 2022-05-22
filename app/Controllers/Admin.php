@@ -41,12 +41,18 @@ class Admin extends BaseController
 
     public function beranda()
     {
+        if ($this->session->has('username') == "") {
+            return redirect()->to(base_url('home/blocked_admin'));
+        }
         $data['title'] = 'Beranda';
         return view('admin/beranda', $data);
     }
 
     public function kategori_jagung()
     {
+        if ($this->session->has('username') == "") {
+            return redirect()->to(base_url('home/blocked_admin'));
+        }
         $data['title'] = 'Kategori Jagung';
         $data['kategori'] = $this->M_kategori->findAll();
         echo view('admin/kategori', $data);
@@ -124,6 +130,9 @@ class Admin extends BaseController
 
     public function jagung($id_kategori = 0)
     {
+        if ($this->session->has('username') == "") {
+            return redirect()->to(base_url('home/blocked_admin'));
+        }
         $data['title'] = 'Jagung';
         // $data['jagung'] = $this->M_jagung->findAll();
         $data['join_jagung'] = $this->M_jagung->join_jagung()->getResultArray();
@@ -216,6 +225,9 @@ class Admin extends BaseController
 
     public function pesanan()
     {
+        if ($this->session->has('username') == "") {
+            return redirect()->to(base_url('home/blocked_admin'));
+        }
         $data['title'] = 'Pesanan';
         $data['pesanan'] = $this->M_checkout->findAll();
         return view('admin/pesanan', $data);
@@ -238,6 +250,9 @@ class Admin extends BaseController
 
     public function gambar1()
     {
+        if ($this->session->has('username') == "") {
+            return redirect()->to(base_url('home/blocked_admin'));
+        }
         $data['title'] = 'Gambar';
         $data['gambar'] = $this->M_gambar1->findAll();
         echo view('admin/gambar1', $data);
@@ -308,6 +323,9 @@ class Admin extends BaseController
 
     public function gambar2()
     {
+        if ($this->session->has('username') == "") {
+            return redirect()->to(base_url('home/blocked_admin'));
+        }
         $data['title'] = 'Gambar';
         $data['gambar'] = $this->M_gambar2->findAll();
         echo view('admin/gambar2', $data);
@@ -378,6 +396,9 @@ class Admin extends BaseController
 
     public function chat()
     {
+        if ($this->session->has('username') == "") {
+            return redirect()->to(base_url('home/blocked_admin'));
+        }
         $data['title'] = 'Chat';
         $data['chat'] = $this->M_login->where('kondisi = 2')->findAll();
         // dd($data['chat']);
@@ -386,6 +407,9 @@ class Admin extends BaseController
 
     public function chatku()
     {
+        if ($this->session->has('username') == "") {
+            return redirect()->to(base_url('home/blocked_admin'));
+        }
         $data['title'] = 'Chat';
         $data['chat'] = $this->M_login->where('kondisi = 2')->findAll();
         $request = \Config\Services::request();

@@ -129,14 +129,12 @@
 
                 <!-- <p class="text-center mb-2 sender font-italic">Stephen</p> -->
                 <div class="msg-box p-2">
-                    <div class="row">
-                        <div class="col-12 d-flex">
-                            <div class="col-md-11">
-                                <input type="text" name="" class="form-control type_msg" placeholder="message ...">
-                            </div>
-                            <div class="col-md-1 ms-3">
-                                <button class="btn btn-success send_btn">Send</button>
-                            </div>
+                    <div class="col-12 d-flex">
+                        <div class="col-md-11">
+                            <input type="text" name="" class="form-control type_msg" placeholder="message ...">
+                        </div>
+                        <div class="col-md-1 ms-3">
+                            <button class="btn btn-success send_btn">Send</button>
                         </div>
                     </div>
                 </div>
@@ -211,16 +209,16 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="dropdown" href="<?= base_url('home/keranjang') ?>">
                         <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light">0</span>
+                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light"></span>
                         <div class="text-light">
                             Cart
                         </div>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('home/chat_mobile') ?>">
+                    <a class="nav-link" href="<?= base_url('home/chat_mobile/' . $chat['id_login']) ?>">
                         <i class="fa-solid fa-comment active"></i>
-                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light">0</span>
+                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light"></span>
                         <div class="text-light">
                             Chat
                         </div>

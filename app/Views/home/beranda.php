@@ -321,16 +321,16 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="dropdown" href="<?= base_url('home/keranjang') ?>">
                         <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light">0</span>
+                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light" id="count_Cart"></span>
                         <div class="text-light">
                             Cart
                         </div>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('home/chat_mobile') ?>">
+                    <a class="nav-link" href="<?= base_url('home/chat_mobile/' . $chat['id_login']) ?>">
                         <i class="fa-solid fa-comment"></i>
-                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light">0</span>
+                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light" id="count_Chat"></span>
                         <div class="text-light">
                             Chat
                         </div>
@@ -418,7 +418,7 @@
                     type: "GET",
                     url: "<?= base_url('home/count_chat') ?>",
                     dataType: "JSON",
-                    success: function (response) {
+                    success: function(response) {
                         $('#countChat').text("");
                         $('#countChat').text(response);
                     }

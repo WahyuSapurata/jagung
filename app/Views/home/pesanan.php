@@ -101,7 +101,7 @@
                 <a class="navbar-brand d-flex" href="<?= base_url('home/beranda') ?>">
                     <img src="<?= base_url() ?>/img/logo.png" alt="logo" width="120" height="56">
                     <h1 style="color: #033e23; margin-left: 20px;">|</h1>
-                    <h4 class="image-bar" style="line-height: 48px; color: #033e23; margin-left: 30px;">Akun Saya</h4>
+                    <h4 class="image-bar" style="line-height: 48px; color: #033e23; margin-left: 30px;">Pesanan</h4>
                 </a>
             </div>
         </div>
@@ -285,23 +285,23 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="dropdown" href="<?= base_url('home/keranjang') ?>">
                         <i class="fa-solid fa-cart-shopping active"></i>
-                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light">0</span>
+                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light"></span>
                         <div class="text-light">
                             Cart
                         </div>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="<?= base_url('home/chat_mobile/' . $chat['id_login']) ?>">
                         <i class="fa-solid fa-comment"></i>
-                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light">0</span>
+                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light"></span>
                         <div class="text-light">
                             Chat
                         </div>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="<?= base_url('home/user') ?>">
                         <i class="fa-solid fa-user"></i>
                         <div class="text-light">
                             User

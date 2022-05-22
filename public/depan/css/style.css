@@ -450,6 +450,7 @@ body {
 @media (max-width: 986px) {
   .user {
     margin-top: 10px;
+    margin-bottom: 15px;
   }
 }
 

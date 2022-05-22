@@ -85,7 +85,7 @@
                 <a href="<?= base_url('home/beranda') ?>">
                     <i class="fa-solid fa-angles-left"></i>
                 </a>
-                <strong class="text-header">Belanja</strong>
+                <strong class="text-header">Checkout</strong>
             </div>
         </div>
     </template>
@@ -358,16 +358,16 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="dropdown" href="<?= base_url('home/keranjang') ?>">
                         <i class="fa-solid fa-cart-shopping active"></i>
-                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light">0</span>
+                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light"></span>
                         <div class="text-light">
                             Cart
                         </div>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('home/chat_mobile') ?>">
+                    <a class="nav-link" href="<?= base_url('home/chat_mobile/' . $chat['id_login']) ?>">
                         <i class="fa-solid fa-comment"></i>
-                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light">0</span>
+                        <span class="position-absolute translate-middle badge rounded-pill bg-danger text-light"></span>
                         <div class="text-light">
                             Chat
                         </div>
