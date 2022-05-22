@@ -37,10 +37,18 @@
     <!-- Toastr -->
     <link rel="stylesheet" href="<?= base_url() ?>/plugins/toastr/toastr.min.css">
 
+    <!-- <link rel="stylesheet" href="<?= base_url() ?>/template/dist/css/adminlte.min.css"> -->
+
 
 </head>
 
 <body id="body">
+
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img src="<?= base_url() ?>/depan/img/preloader.gif" alt="Logo" height="100" width="100">
+        <span>Loading...</span>
+    </div>
 
     <!-- navbar -->
 
@@ -373,6 +381,14 @@
     <script src="<?= base_url() ?>/depan/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
     <!-- Contact Form JavaScript File -->
     <script src="<?= base_url() ?>/depan/contactform/contactform.js"></script>
+
+    <script>
+        $(window).load(function() {
+            $(".preloader").delay(250).fadeOut("slow"), $("body").delay(250).css({
+                overflow: "visible"
+            })
+        });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 

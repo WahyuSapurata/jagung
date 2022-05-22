@@ -41,7 +41,6 @@ $RECYCLE.BIN/
 #-------------------------
 # These should never be under version control,
 # as it poses a security risk.
-.env
 .vagrant
 Vagrantfile
 
@@ -69,7 +68,6 @@ php_errors.log
 #-------------------------
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 
 #-------------------------
@@ -83,7 +81,6 @@ phpunit
 #-------------------------
 # Composer
 #-------------------------
-vendor/
 
 #-------------------------
 # IDE / Development Files
@@ -103,8 +100,6 @@ _modules/*
 nbproject/
 build/
 nbbuild/
-dist/
-nbdist/
 nbactions.xml
 nb-configuration.xml
 .nb-gradle/

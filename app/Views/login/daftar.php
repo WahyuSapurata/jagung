@@ -35,6 +35,11 @@
 
 <body class="bg1">
 
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img src="<?= base_url() ?>/depan/img/preloader.gif" alt="Logo" height="100" width="100">
+        <span>Loading...</span>
+    </div>
+
     <div class="container">
 
         <!-- Outer Row -->
@@ -103,6 +108,14 @@
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url() ?>/vendor/jquery/jquery.min.js"></script>
     <script src="<?= base_url() ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url() ?>/depan/lib/jquery/jquery-migrate.min.js"></script>
+    <script>
+        $(window).load(function() {
+            $(".preloader").delay(250).fadeOut("slow"), $("body").delay(250).css({
+                overflow: "visible"
+            })
+        });
+    </script>
 
     <!-- Core plugin JavaScript-->
     <script src="<?= base_url() ?>/vendor/jquery-easing/jquery.easing.min.js"></script>

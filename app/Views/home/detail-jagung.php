@@ -44,6 +44,12 @@
 
 <body>
 
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img src="<?= base_url() ?>/depan/img/preloader.gif" alt="Logo" height="100" width="100">
+        <span>Loading...</span>
+    </div>
+
     <!-- header-bar -->
 
     <header-bar></header-bar>
@@ -327,6 +333,14 @@
 
     <!-- Template Main Javascript File -->
     <script src="<?= base_url() ?>/depan/js/main.js"></script>
+
+    <script>
+        $(window).load(function() {
+            $(".preloader").delay(250).fadeOut("slow"), $("body").delay(250).css({
+                overflow: "visible"
+            })
+        });
+    </script>
 
     <!-- slick -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

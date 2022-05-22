@@ -13,7 +13,7 @@
     <title>
         <?= $title ?>
     </title>
-    
+
     <!-- Custom fonts for this template-->
     <link href="<?= base_url() ?>/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -34,6 +34,11 @@
 </head>
 
 <body class="bg1">
+
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img src="<?= base_url() ?>/img/logo.png" alt="Logo" height="100" width="200">
+        <!-- <span>Loading...</span> -->
+    </div>
 
     <div class="container">
 
@@ -101,7 +106,8 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url() ?>/vendor/jquery/jquery.min.js"></script>
+    <script src="<?= base_url() ?>/depan/lib/jquery/jquery.min.js"></script>
+    <script src="<?= base_url() ?>/depan/lib/jquery/jquery-migrate.min.js"></script>
     <script src="<?= base_url() ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -114,6 +120,13 @@
     <script src="<?= base_url() ?>/plugins/sweetalert2/sweetalert2.min.js"></script>
     <script src="<?= base_url() ?>/plugins/toastr/toastr.min.js"></script>
     <!-- <script src="<?= base_url('file/') ?>myscript.js"></script> -->
+    <script>
+        $(window).load(function() {
+            $(".preloader").delay(1550).fadeOut("up"), $("body").delay(1550).css({
+                overflow: "visible"
+            })
+        });
+    </script>
     <script>
         $(function() {
 

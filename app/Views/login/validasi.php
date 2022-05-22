@@ -35,6 +35,12 @@
 
 <body class="bg1">
 
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img src="<?= base_url() ?>/depan/img/preloader.gif" alt="Logo" height="100" width="100">
+        <span>Loading...</span>
+    </div>
+
     <div class="container">
 
         <!-- Outer Row -->
@@ -85,6 +91,14 @@
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url() ?>/vendor/jquery/jquery.min.js"></script>
     <script src="<?= base_url() ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url() ?>/depan/lib/jquery/jquery-migrate.min.js"></script>
+    <script>
+        $(window).load(function() {
+            $(".preloader").delay(250).fadeOut("slow"), $("body").delay(250).css({
+                overflow: "visible"
+            })
+        });
+    </script>
 
     <!-- Core plugin JavaScript-->
     <script src="<?= base_url() ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -96,6 +110,7 @@
     <script src="<?= base_url() ?>/plugins/sweetalert2/sweetalert2.min.js"></script>
     <script src="<?= base_url() ?>/plugins/toastr/toastr.min.js"></script>
     <!-- <script src="<?= base_url('file/') ?>myscript.js"></script> -->
+    <script src="<?= base_url() ?>/template/dist/js/adminlte.js"></script>
     <script>
         $(function() {
 
