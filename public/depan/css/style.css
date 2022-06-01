@@ -542,6 +542,14 @@ h3 {
   color: #033e23;
 }
 
+.map-biodata {
+  width: 50%;
+  aspect-ratio: 2/1;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin-left: 277px;
+}
+
 @media (max-width: 986px) {
   .text-harga,
   .total-harga {
@@ -551,6 +559,14 @@ h3 {
 
   .harga-checkout {
     font-size: 18px;
+  }
+
+  .belanja {
+    display: inline-grid;
+  }
+
+  .map-biodata {
+    margin-left: 88px;
   }
 }
 

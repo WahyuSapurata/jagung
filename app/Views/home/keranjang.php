@@ -109,9 +109,9 @@
                     <h1 style="color: #033e23;">|</h1>
                     <h4 class="image-bar" style="line-height: 48px; color: #033e23;">Keranjang Belanja</h4>
                 </a>
-                <form class="d-flex form">
-                    <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass text-light"></i></button>
+                <form action="<?= base_url('home/cari') ?>" method="GET" class="d-flex form">
+                    <input class="form-control me-1" name="cari" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" title="Telusuri" type="submit"><i class="fa-solid fa-magnifying-glass text-light"></i></button>
                 </form>
 
             </div>

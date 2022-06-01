@@ -405,13 +405,14 @@ class Admin extends BaseController
         return view('admin/chat', $data);
     }
 
-    public function chatku()
+    public function chatku($id_login)
     {
         if ($this->session->has('username') == "") {
             return redirect()->to(base_url('home/blocked_admin'));
         }
         $data['title'] = 'Chat';
         $data['chat'] = $this->M_login->where('kondisi = 2')->findAll();
+        $data['chatku'] = $this->M_login->where('id_login', $id_login)->first();
         $request = \Config\Services::request();
         $no =  $request->uri->getSegment(3);
         $data['pesanku'] = $this->M_login->get_pesan($no);

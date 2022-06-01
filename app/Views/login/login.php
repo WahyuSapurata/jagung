@@ -144,6 +144,14 @@
         });
     </script>
 
+    <script>
+        caches.delete('superiorcorn').then(function(cache) {
+            console.log('chache delete')
+        }).catch(function(e) {
+            console.log('chache data error')
+        });
+    </script>
+
 </body>
 
 </html>

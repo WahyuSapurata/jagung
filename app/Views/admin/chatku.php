@@ -216,7 +216,7 @@
                                     <img src="https://avatars.githubusercontent.com/u/91162157?v=4" style="border-radius: 50%;">
                                 </div>
                                 <div class="col-md-11 user-detail pt-2">
-                                    <h6 class="pt-1 ms-3">wahyu</h6>
+                                    <h6 class="pt-1 ms-3"><?= $chatku['nama'] ?></h6>
                                 </div>
                             </div>
                             <div class="chat-content pt-3 bg-white border border-top-0">

@@ -197,15 +197,6 @@
                         </div>
                     </div>
                     <div class="map-biodata" id='map'></div>
-                    <style>
-                        .map-biodata {
-                            width: 50%;
-                            aspect-ratio: 2/1;
-                            border-radius: 5px;
-                            margin-bottom: 15px;
-                            margin-left: 277px;
-                        }
-                    </style>
 
                     <div class="row g-3 align-items-center mb-3">
                         <div class="col-3">
