@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
+
     <link rel="icon" href="<?= base_url() ?>/img/logo.png">
     <title>
         <?= $title ?>
@@ -106,6 +108,8 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
+
+
     <script src="<?= base_url() ?>/depan/lib/jquery/jquery.min.js"></script>
     <script src="<?= base_url() ?>/depan/lib/jquery/jquery-migrate.min.js"></script>
     <script src="<?= base_url() ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -7,6 +7,11 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
     <title><?= NAMA_APLIKASI . ' - ' . $title ?></title>
+
+    <link rel="shortcut icon" href="<?= base_url() ?>/img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="<?= base_url() ?>/img/logo.png" type="image/png">
+    <link rel="manifest" href="<?= base_url() ?>/manifest.json">
+
     <link rel="icon" href="<?= base_url() ?>/img/logo.png">
 
     <!-- Bootstr<ap CSS File -->
@@ -234,18 +239,17 @@
         <div class="footer-center">
             <div>
                 <i class="fa fa-map-marker"></i>
-                <p><span>309 - Rupa Solitaire,
-                        Bldg. No. A - 1, Sector - 1</span>
-                    Mahape, Navi Mumbai - 400710</p>
+                <p><span>Perumahan Villa Samata Blok A2 no.9</span>
+                    Samata, Gowa, Sulawesi-Selatan Indonesia</p>
             </div>
 
             <div>
                 <i class="fa fa-phone"></i>
-                <p>+91 22-27782183</p>
+                <p>0853 3986 82804</p>
             </div>
             <div>
                 <i class="fa fa-envelope"></i>
-                <p><a href="https://www.samuelpasaribu.com">support@samuelpasaribu.com</a></p>
+                <p><a href="https://superiorcorn.id/">superiorcorn6@gmail.com</a></p>
             </div>
         </div>
         <div class="footer-right">
@@ -254,9 +258,9 @@
                 We offer training and skill building courses across Technology, Design, Management, Science and Humanities.
             </p>
             <div class="footer-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100073008263145" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/superior.corn/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
             </div>
@@ -362,6 +366,22 @@
 
 
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <script>
+        var BASE_URL = '<?= base_url() ?>';
+        document.addEventListener('DOMContentLoaded', init, false);
+
+        function init() {
+            if ('serviceWorker' in navigator && navigator.onLine) {
+                navigator.serviceWorker.register(BASE_URL + '/service-worker.js')
+                    .then((reg) => {
+                        console.log('Registrasi service worker Berhasil', reg);
+                    }, (err) => {
+                        console.error('Registrasi service worker Gagal', err);
+                    });
+            }
+        }
+    </script>
 
     <script src="<?= base_url() ?>/componen/bottom-bar.js"></script>
 

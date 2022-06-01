@@ -2,6 +2,11 @@
 
 namespace App\Controllers;
 
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\SMTP;
+// use PHPMailer\PHPMailer\Exception;
+use \Mailjet\Resources;
+
 use App\Models\M_login;
 
 class Login extends BaseController
@@ -14,7 +19,7 @@ class Login extends BaseController
         $this->session = \Config\Services::session();
         $this->session->start();
         $this->M_login = new M_login();
-        $this->email = \Config\Services::email();
+        // $this->email = \Config\Services::email();
     }
 
     public function index()
@@ -81,31 +86,104 @@ class Login extends BaseController
 
         ]);
         if ($periksa) {
+            // $client = \Config\Services::curlrequest();
+            // $response = $client->request('POST', 'https://bladerlaiga.my.id/api/v1/mail', [
+            //     "headers" => [
+            //         "content-type" => "application/json"
+            //     ]
+            // ]);
+
+            // echo "<pre>";
+            // print_r($response);
+
+            // $url =  'https://bladerlaiga.my.id/api/v1/mail';
+            // $curl = curl_init($url);
+
             helper('text');
             $kodeOtp = random_string('numeric', 5);
-            $isipesan = "kode OTP : " . $kodeOtp;
-            $this->email->setFrom('wh260200@gmail.com', 'Superior Corn');
-            $this->email->setTo($this->request->getVar('email'));
+            $email = $this->request->getVar('email');
+            // $data = [
+            //     'to' => $email,
+            //     'from' => 'bladerlaiga.97@gmail.com',
+            //     'reply' => $email,
+            //     'message' => 'Kode Otp : ' . $kodeOtp,
+            //     'message_html' => 'Kode Otp : ' . $kodeOtp,
+            //     'subject' => 'SuperiorCorn'
+            // ];
+            // $post = json_encode($data);
+            // curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
+            // curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+            //     'Content-Type:application/json',
+            // ));
+            // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            // $result = curl_exec($curl);
+            // json_decode($result);
+            // curl_close($curl);
+            // dd($hasil);
+            // $mail = new PHPMailer(true);
+            // helper('text');
+            // $kodeOtp = random_string('numeric', 5);
+            // try {
+            //     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            //     $mail->isSMTP();
+            //     $mail->Host       = 'smtp.googlemail.com';
+            //     $mail->SMTPAuth   = true;
+            //     $mail->Username   = 'wm337708@gmail.com';
+            //     $mail->Password   = 'wahyuhidayat';
+            //     $mail->SMTPSecure = 'ssl';
+            //     $mail->Port       = 465;
 
-            $this->email->setSubject('Kode Verifikasi Anda');
+            //     $mail->setFrom('wh260200@gmail.com', 'Superior Corn');
+            //     $mail->addAddress($this->request->getVar('email'));
+            //     $mail->addReplyTo($this->request->getVar('email'));
 
-            $this->email->setMessage($isipesan);
+            //     $mail->isHTML(true);
+            //     $mail->Subject = 'Kode Verifikasi Anda';
+            //     $mail->Body    = "kode OTP : " . $kodeOtp;
 
-            if (!$this->email->send()) {
-                return false;
-            } else {
-                $email = $this->request->getVar('email');
-                session()->set($email);
-                $this->M_login->save([
-                    'nama' => $this->request->getVar('nama'),
-                    'email' => $email,
-                    'username' => $this->request->getVar('username'),
-                    'password' => md5($this->request->getVar('password1')),
-                    'otp' => $kodeOtp,
-                ]);
-                session()->setFlashdata("success", "Biodata berhasil di kirim.");
-                return redirect()->to(base_url('login/validasi'));
-            }
+            //     $mail->send();
+
+            //     $email = $this->request->getVar('email');
+
+            $mj = new \Mailjet\Client('19b6b7293c39d204e46d42833ee7c9eb', 'c213951236cd934c6ffcaad9e0dcc2e6', true, ['version' => 'v3.1']);
+            $body = [
+                'Messages' => [
+                    [
+                        'From' => [
+                            'Email' => "superiorcorn6@gmail.com",
+                            'Name' => "superior"
+                        ],
+                        'To' => [
+                            [
+                                'Email' => $email,
+                            ]
+                        ],
+                        'Subject' => "SuperiorCorn",
+                        'TextPart' => "kode OTP : " . $kodeOtp,
+                        'HTMLPart' => "kode OTP : " . $kodeOtp,
+                    ]
+                ]
+            ];
+            $response = $mj->post(Resources::$Email, ['body' => $body]);
+            $response->success() && var_dump($response->getData());
+
+            $data = [
+                'email' => $email
+            ];
+            session()->set($data);
+            $this->M_login->save([
+                'nama' => $this->request->getVar('nama'),
+                'email' => $email,
+                'username' => $this->request->getVar('username'),
+                'password' => md5($this->request->getVar('password1')),
+                'otp' => $kodeOtp,
+            ]);
+            session()->setFlashdata("success", "Biodata berhasil di kirim.");
+            return redirect()->to(base_url('login/validasi'));
+            // } catch (Exception $e) {
+            //     session()->setFlashdata('error', "Gagal mengirim email. Error: " . $mail->ErrorInfo);
+            //     return redirect()->to(base_url('login/daftar'));
+            // }
         } else {
             session()->setFlashdata("error", "Password 1 dan 2 tidak sesuai.");
             return redirect()->to(base_url('login/daftar'));
@@ -121,13 +199,17 @@ class Login extends BaseController
     public function validasi_otp()
     {
         $email = session('email');
+        // dd($email);
         $otp = $this->request->getVar('otp');
-        $cek = $this->M_login->where('email', $email)->where('otp', $otp)->find();
-        if (!is_null($cek)) {
-            return redirect()->to(base_url('login/index'));
-        } else {
+        // dd($otp);
+        $cek = $this->M_login->where('email', $email)->where('otp', $otp)->first();
+        // dd($cek);
+        if (is_null($cek)) {
             session()->setFlashdata("error", "Otp tidak valid.");
             return redirect()->to(base_url('login/validasi'));
+        } else {
+            // session()->destroy();
+            return redirect()->to(base_url('login/index'));
         }
     }
 

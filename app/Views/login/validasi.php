@@ -57,6 +57,7 @@
                                 <div class="p-4">
                                     <div class="text-center">
                                         <h1 class="h4 text-light mb-4">VALIDASI</h1>
+                                        <?= session('email') ?>
                                     </div>
 
                                     <form method="POST" action="<?= base_url('login/validasi_otp') ?>">

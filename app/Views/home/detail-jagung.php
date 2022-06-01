@@ -180,18 +180,17 @@
         <div class="footer-center">
             <div>
                 <i class="fa fa-map-marker"></i>
-                <p><span>309 - Rupa Solitaire,
-                        Bldg. No. A - 1, Sector - 1</span>
-                    Mahape, Navi Mumbai - 400710</p>
+                <p><span>Perumahan Villa Samata Blok A2 no.9</span>
+                    Samata, Gowa, Sulawesi-Selatan Indonesia</p>
             </div>
 
             <div>
                 <i class="fa fa-phone"></i>
-                <p>+91 22-27782183</p>
+                <p>0853 3986 82804</p>
             </div>
             <div>
                 <i class="fa fa-envelope"></i>
-                <p><a href="https://www.samuelpasaribu.com">support@samuelpasaribu.com</a></p>
+                <p><a href="https://superiorcorn.id/">superiorcorn6@gmail.com</a></p>
             </div>
         </div>
         <div class="footer-right">
@@ -200,9 +199,9 @@
                 We offer training and skill building courses across Technology, Design, Management, Science and Humanities.
             </p>
             <div class="footer-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100073008263145" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/superior.corn/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
             </div>

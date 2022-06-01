@@ -1,0 +1,17 @@
+{
+    "name": "SuperiorCorn",
+    "short_name": "SuperiorCorn",
+    "description": "Marketplace",
+    "icons": [
+      {
+        "src": "img/corn.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ],
+    "start_url": "/",
+    "display": "fullscreen",
+    "theme_color": "#f45",
+    "background_color": "#fff"
+}
